@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Just Test</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script type="text/javascript" src="/dist/h.js"></script>
+    </head>
+    <body>
+        <!-- TODO: Write more sophisticated tests with Jashmine, later on -->
+        <div id="test"></div>
+
+        <script id="entry-template" type="text/x-handlebars-template">
+          <div class="entry">
+            <h1>{{capitalizeEach title}}</h1>
+            <p class="body">
+              <b>Preview</b>: {{excerpt body 100}}
+            </p>
+            <p class="body">
+              {{body}}
+            </p>
+          </div>
+        </script>
+
+        <script type="text/javascript">
+            H.registerHelpers();
+
+            var template = Handlebars.compile(
+                document.getElementById('entry-template').innerHTML
+            );
+
+            var data = {
+                title: 'hello world',
+                body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            };
+
+            document.getElementById('test').innerHTML = template(data);
+        </script>
+    </body>
+</html>
