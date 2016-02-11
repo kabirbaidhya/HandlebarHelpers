@@ -19,6 +19,24 @@
             <p class="body">
               {{body}}
             </p>
+            <ul>
+                <li>
+                    eq:
+                    {{#if (eq testValue 3)}}
+                        testValue === 3
+                    {{else}}
+                        testValue !== 3
+                    {{/if}}
+                </li>
+                <li>
+                    eqw:
+                    {{#if (eqw testValue '3')}}
+                        testValue == '3'
+                    {{else}}
+                        testValue != '3'
+                    {{/if}}
+                </li>
+            </ul>
           </div>
         </script>
 
@@ -31,7 +49,8 @@
 
             var data = {
                 title: 'hello world',
-                body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                testValue: 3
             };
 
             document.getElementById('test').innerHTML = template(data);

@@ -120,7 +120,37 @@ function checkedIf (param1, param2) {
     return (param1 === param2) ? 'checked' : '';
 }
 
+/**
+ * Returns boolean to determine whether or not two values are equal (===)
+ * TODO: Move this to separate file conditionals.js or something like that
+ *
+ * Example usage:
+ *      {{eq value 3}}
+ *
+ * @param value1
+ * @param value2
+ */
+function eq(value1, value2) {
+    return (value1 === value2);
+}
+
+/**
+ * Returns boolean to determine whether or not two values are equal (==) i.e weak checking
+ * TODO: Move this to separate file conditionals.js or something like that
+ 
+ * Example usage:
+ *      {{eqw '3' 3}}   => true
+ *
+ * @param value1
+ * @param value2
+ */
+function eqw(value1, value2) {
+    return (value1 == value2);
+}
+
 export {
+    eq,
+    eqw,
     showIf,
     hideIf,
     excerpt,
