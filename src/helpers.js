@@ -107,13 +107,26 @@ function selectedIf(param1, param2) {
     return (param1 === param2) ? 'selected' : '';
 }
 
+/**
+ * A checkedIf helper for checkboxes.
+ *
+ * Example usage:
+ *      {{checkedIf param1 param2}}
+ *
+ * @param param1
+ * @param param2
+ */
+function checkedIf (param1, param2) {
+    return (param1 === param2) ? 'checked' : '';
+}
 
 export {
-    excerpt,
-    dashCase,
-    capitalizeEach,
-    capitalizeFirst,
     showIf,
     hideIf,
-    selectedIf
+    excerpt,
+    dashCase,
+    checkedIf,
+    selectedIf,
+    capitalizeEach,
+    capitalizeFirst
 };
