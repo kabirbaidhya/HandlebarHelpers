@@ -148,9 +148,69 @@ function eqw(value1, value2) {
     return (value1 == value2);
 }
 
+/**
+ * Returns boolean to check for Less Than condition (a < b)
+ * TODO: Move this to separate file conditionals.js or something like that
+
+ * Example usage:
+ *      {{lt 2 3}}   => true
+ *
+ * @param value1
+ * @param value2
+ */
+function lt(value1, value2) {
+    return (value1 < value2);
+}
+
+/**
+ * Returns boolean to check for Less Than Or Equals condition (a <= b)
+ * TODO: Move this to separate file conditionals.js or something like that
+
+ * Example usage:
+ *      {{lte 2 3}}   => true
+ *
+ * @param value1
+ * @param value2
+ */
+function lte(value1, value2) {
+    return (value1 <= value2);
+}
+
+/**
+ * Returns boolean to check for Greater Than condition (a > b)
+ * TODO: Move this to separate file conditionals.js or something like that
+
+ * Example usage:
+ *      {{gt 2 3}}   => false
+ *
+ * @param value1
+ * @param value2
+ */
+function gt(value1, value2) {
+    return (value1 > value2);
+}
+
+/**
+ * Returns boolean to check for Greater Than Or Equals condition (a >= b)
+ * TODO: Move this to separate file conditionals.js or something like that
+
+ * Example usage:
+ *      {{gte 3 3}}   => true
+ *
+ * @param value1
+ * @param value2
+ */
+function gte(value1, value2) {
+    return (value1 >= value2);
+}
+
 export {
     eq,
     eqw,
+    lt,
+    lte,
+    gt,
+    gte,
     showIf,
     hideIf,
     excerpt,

@@ -1,17 +1,19 @@
 
 import * as helpers from './helpers.js';
-import {isUndefined, isObject} from './util/utils.js';
+import {isDefined, isObject} from './util/utils.js';
 
 class H {
     static registerHelpers() {
+        var handlebars;
 
-        // TODO: Make it compatible with node environment too
-        if (isUndefined(window.Handlebars)) {
+        if (isDefined(window.Handlebars)) {
+            handlebars = window.Handlebars;
+        } else {
             throw new Error('Handlebars not loaded');
         }
 
         for (let name in helpers) {
-            window.Handlebars.registerHelper(name, helpers[name]);
+            handlebars.registerHelper(name, helpers[name]);
         }
     }
 }

@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Handlebars Helpers",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "handlebars": "^4.0.5"
+  },
   "devDependencies": {
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",

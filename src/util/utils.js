@@ -7,8 +7,12 @@ function isUndefined(thing) {
     return (typeof thing === 'undefined');
 }
 
+function isDefined(thing) {
+    return !isUndefined(thing);
+}
+
 function isObject(thing) {
     return (typeof thing === 'object');
 }
 
-export {isFunction, isUndefined, isObject};
+export {isFunction, isUndefined, isDefined, isObject};

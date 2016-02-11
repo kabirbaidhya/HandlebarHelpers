@@ -22,3 +22,7 @@ gulp.task('uglify', ['compile'], function() {
 });
 
 gulp.task('default', ['compile', 'uglify']);
+
+gulp.task('watch', function() {
+    gulp.watch('./src/**/*.js', ['default']);
+});
