@@ -98,26 +98,26 @@ function hideIf (param) {
  * A selectedIf helper for dropdowns and radio boxes.
  *
  * Example usage:
- *      {{selectedIf param1 param2}}
+ *      {{selectedIf booleanValue}}
+ *      {{selectedIf eq(value 3)}}
  *
- * @param param1
- * @param param2
+ * @param value
  */
-function selectedIf(param1, param2) {
-    return (param1 === param2) ? 'selected' : '';
+function selectedIf(value) {
+    return !!value ? 'selected' : '';
 }
 
 /**
  * A checkedIf helper for checkboxes.
  *
  * Example usage:
- *      {{checkedIf param1 param2}}
+ *      {{checkedIf booleanValue}}
+ *      {{checkedIf eq(value 3)}}
  *
- * @param param1
- * @param param2
+ * @param value
  */
-function checkedIf (param1, param2) {
-    return (param1 === param2) ? 'checked' : '';
+function checkedIf (value) {
+    return !!value ? 'checked' : '';
 }
 
 /**
@@ -137,7 +137,7 @@ function eq(value1, value2) {
 /**
  * Returns boolean to determine whether or not two values are equal (==) i.e weak checking
  * TODO: Move this to separate file conditionals.js or something like that
- 
+
  * Example usage:
  *      {{eqw '3' 3}}   => true
  *

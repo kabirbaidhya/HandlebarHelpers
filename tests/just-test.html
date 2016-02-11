@@ -36,6 +36,19 @@
                         testValue != '3'
                     {{/if}}
                 </li>
+                <li>
+                    checkedIf:
+                    <input type="checkbox" value="3" {{checkedIf (eq testValue 3)}}>Checked
+                    <input type="checkbox" value="2" {{checkedIf (eq testValue 2)}}>Not Checked
+                </li>
+                <li>
+                    selectedIf:
+                    <select>
+                        {{#each options}}
+                            <option value="{{id}}" {{selectedIf (eq id 2)}}>{{text}}</option>
+                        {{/each}}
+                    </select>
+                </li>
             </ul>
           </div>
         </script>
@@ -50,7 +63,12 @@
             var data = {
                 title: 'hello world',
                 body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                testValue: 3
+                testValue: 3,
+                options: [
+                    {id: 1, text: 'Option 1'},
+                    {id: 2, text: 'Option 2'},
+                    {id: 3, text: 'Option 3'}
+                ]
             };
 
             document.getElementById('test').innerHTML = template(data);
