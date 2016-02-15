@@ -7,10 +7,10 @@
  * @param string
  * @param length
  */
-function excerpt (string, length) {
-    length = length || 50;
+function excerpt(string, length) {
+    length = parseInt(length) || 50;
 
-    if (typeof (string) !== 'string') {
+    if (typeof (string) !== 'string' || typeof (length) !== 'number') {
         return string;
     }
 
@@ -30,7 +30,7 @@ function excerpt (string, length) {
  *
  * @param string param
  */
-function dashCase (param) {
+function dashCase(param) {
     var string = param.replace(/[^\w\s]/gi, '').trim();
 
     return string.replace(/\s+/, '-').toLowerCase();
@@ -51,7 +51,7 @@ function capitalizeEach(param) {
         });
     }
 
-    return '';
+    return param;
 }
 
 /**
@@ -67,30 +67,30 @@ function capitalizeFirst(param) {
         return param.charAt(0).toUpperCase() + param.slice(1);
     }
 
-    return '';
+    return param;
 }
 
 /**
- * A showIf helper for showing any element if the passed parameter holds true
+ * A showIf helper for showing any element if the passed parameter holds true.
  *
  * Example usage:
  *      {{showIf itShouldBeVisible}}
  *
  * @param param value to be checked
  */
-function showIf (param) {
+function showIf(param) {
     return !!param ? '' : 'hidden';
 }
 
 /**
- * A hideIf helper for dropdowns.
+ * A hideIf helper for hiding any element if the passed parameter holds true.
  *
  * Example usage:
  *      {{hideIf directLease}}
  *
  * @param param value to be checked
  */
-function hideIf (param) {
+function hideIf(param) {
     return !!param ? 'hidden' : '';
 }
 
@@ -116,7 +116,7 @@ function selectedIf(value) {
  *
  * @param value
  */
-function checkedIf (value) {
+function checkedIf(value) {
     return !!value ? 'checked' : '';
 }
 
