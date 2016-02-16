@@ -1,6 +1,13 @@
 # HandlebarHelpers
 HandlebarHelpers
 
+## TODO
+ * not
+ * empty(array)
+ * count(array)
+ * include
+ * formatDate (based on moment)
+ * sprintf (based on sprintf-js)
 
 ## Testing the helpers
 
