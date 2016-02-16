@@ -15,4 +15,8 @@ function isObject(thing) {
     return (typeof thing === 'object');
 }
 
-export {isFunction, isUndefined, isDefined, isObject};
+function isArray(thing) {
+    return (Object.prototype.toString.call(thing) === '[object Array]');
+}
+
+export {isFunction, isUndefined, isDefined, isObject, isArray};

@@ -37,4 +37,17 @@ describe('utils', () => {
     it('isObject should return false if param is not an object', () => {
         expect(utils.isObject(parseInt)).toEqual(false);
     });
+
+    /* isArray */
+    it('isArray should return true if param passed is an array', () => {
+        expect(utils.isArray([5, 6, 7])).toEqual(true);
+    });
+
+    it('isArray should return false if param is a normal object', () => {
+        expect(utils.isArray({foo:'bar'})).toEqual(false);
+    });
+
+    it('isArray should return false if param is a scalar value', () => {
+        expect(utils.isArray(567)).toEqual(false);
+    });
 });

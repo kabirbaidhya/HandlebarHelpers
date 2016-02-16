@@ -176,11 +176,29 @@ describe('helpers', () => {
 
     /* ifx */
     it('ifx should return value1 if the condition holds true', () => {
-        expect(helpers.ifx( 2 > 1, 'value 1', 'value 2')).toEqual('value 1');
+        expect(helpers.ifx(2 > 1, 'value 1', 'value 2')).toEqual('value 1');
     });
 
     it('ifx should return value2 if the condition results to false', () => {
-        expect(helpers.ifx( 2 < 1, 'value 1', 'value 2')).toEqual('value 2');
+        expect(helpers.ifx(2 < 1, 'value 1', 'value 2')).toEqual('value 2');
+    });
+
+    /* not */
+    it('not should return true if false is passed', () => {
+        expect(helpers.not(false)).toEqual(true);
+    });
+
+    it('not should return false if true is passed', () => {
+        expect(helpers.not(true)).toEqual(false);
+    });
+
+    /* empty */
+    it('empty should return true for an empty array', () => {
+        expect(helpers.empty([])).toEqual(true);
+    });
+
+    it('empty should return false for a non-empty array', () => {
+        expect(helpers.empty([5, 6, 7])).toEqual(false);
     });
 
 });

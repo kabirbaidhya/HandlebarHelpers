@@ -1,3 +1,5 @@
+import {isArray} from './util/utils.js';
+
 /**
  * An excerpt helper to extract a few characters from a string. Default number of characters is 50.
  *
@@ -219,6 +221,31 @@ function ifx(condition, value1, value2) {
     return !!condition ? value1 :value2;
 }
 
+/**
+ * Returns the Logical NOT of any expression
+ *
+ * Example usage:
+ *      {{not true}}    => false
+ *      {{not false}}   => true
+ */
+function not(expression) {
+    return !expression;
+}
+
+/**
+ * Checks if an array is empty
+ *
+ * Example usage:
+ *      {{empty array}}         => true or false
+ */
+function empty(array) {
+    if (!isArray(array)) {
+        return true;
+    }
+
+    return (array.length === 0);
+}
+
 export {
     eq,
     eqw,
@@ -227,6 +254,8 @@ export {
     gt,
     gte,
     ifx,
+    not,
+    empty,
     showIf,
     hideIf,
     excerpt,
