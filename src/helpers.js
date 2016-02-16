@@ -204,6 +204,21 @@ function gte(value1, value2) {
     return (value1 >= value2);
 }
 
+/**
+ * Helper to imitate the ternary conditional operator ?:
+ *
+ * Example usage:
+ *      {{ifx true 'Foo' 'Bar'}}   => Foo
+ *      {{ifx false 'Foo' 'Bar'}}   => Foo
+ *
+ * @param condition
+ * @param value1
+ * @param value2
+ */
+function ifx(condition, value1, value2) {
+    return !!condition ? value1 :value2;
+}
+
 export {
     eq,
     eqw,
@@ -211,6 +226,7 @@ export {
     lte,
     gt,
     gte,
+    ifx,
     showIf,
     hideIf,
     excerpt,

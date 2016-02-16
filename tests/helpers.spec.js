@@ -174,4 +174,13 @@ describe('helpers', () => {
         expect(helpers.gte(1, 2)).toEqual(false);   // Lexicographical Order
     });
 
+    /* ifx */
+    it('ifx should return value1 if the condition holds true', () => {
+        expect(helpers.ifx( 2 > 1, 'value 1', 'value 2')).toEqual('value 1');
+    });
+
+    it('ifx should return value2 if the condition results to false', () => {
+        expect(helpers.ifx( 2 < 1, 'value 1', 'value 2')).toEqual('value 2');
+    });
+
 });
